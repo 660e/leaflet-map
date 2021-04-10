@@ -35,8 +35,5 @@ export default {
 <style lang="less" scoped>
 .map {
   height: 100vh;
-  &.leaflet-container {
-    font-family: inherit;
-  }
 }
 </style>
