@@ -1,10 +1,11 @@
 <template>
-  <div class="map" id="map"></div>
+  <div>
+    <div class="map" id="map"></div>
+  </div>
 </template>
 
 <script>
-// import L from '@/utils/leaflet.js';
-import L from 'leaflet';
+import Map from '@/utils/map';
 export default {
   data() {
     return {
@@ -12,23 +13,13 @@ export default {
     };
   },
   mounted() {
-    this.initMap();
+    this.map = new Map('map', [39.91328, 116.403931], 17);
+    this.map.marker([39.91328, 116.403931]);
+    this.map.marker([39.916702, 116.400582], 'success');
+    this.map.marker([39.911394, 116.400238], 'warning');
+    this.map.marker([39.91146, 116.408016], 'danger');
   },
-  methods: {
-    initMap() {
-      const options = {
-        attribution: '660e',
-        maxZoom: 18,
-        minZoom: 16
-      };
-      this.map = L.map('map', {
-        crs: L.CRS.Baidu,
-        center: [39.91328, 116.403931],
-        zoom: 17
-      });
-      L.tileLayer.chinaProvider('Baidu.Normal.Map', options).addTo(this.map);
-    }
-  }
+  methods: {}
 };
 </script>
 
