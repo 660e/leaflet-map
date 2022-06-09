@@ -4,7 +4,6 @@
 
 <script>
 export default {
-  name: "leaflet-map",
-  mounted() {},
+  name: 'leaflet-map'
 };
 </script>

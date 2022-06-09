@@ -1,16 +1,16 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
   {
-    path: "/",
-    name: "leaflet-map",
-    component: () => import("@/views"),
-  },
+    path: '/',
+    name: 'leaflet-map',
+    component: () => import('@/views')
+  }
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
 
 export default router;
