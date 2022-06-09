@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-3xl font-bold underline">leaflet-map</h1>
+  <div class="font-mono h-screen flex justify-center items-center">leaflet-map</div>
 </template>
 
 <script>
