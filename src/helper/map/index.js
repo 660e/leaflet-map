@@ -3,8 +3,8 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const helpers = {
-  initialise(element, center, zoom) {
-    const _ = L.map(element, { center, zoom });
+  initialise(el, center, zoom) {
+    const _ = L.map(el, { center, zoom });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(_);
 
@@ -13,8 +13,8 @@ const helpers = {
 };
 
 class Map {
-  constructor(element, center, zoom) {
-    this.map = helpers.initialise(element, center, zoom);
+  constructor(options) {
+    this.map = helpers.initialise(options.el, options.center, options.zoom);
   }
 
   version() {

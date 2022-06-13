@@ -15,7 +15,11 @@ export default {
     };
   },
   mounted() {
-    this.map = new Map('map', [39.91328, 116.403931], 17);
+    this.map = new Map({
+      el: 'map',
+      center: [39.906217, 116.3912757],
+      zoom: 16
+    });
   }
 };
 </script>
