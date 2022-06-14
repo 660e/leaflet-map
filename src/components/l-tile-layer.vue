@@ -13,7 +13,7 @@ export default {
     }
   },
   mounted() {
-    this.$parent.addLayer(tileLayer(this.urlTemplate));
+    this.$parent.tileLayer(tileLayer(this.urlTemplate));
   }
 };
 </script>

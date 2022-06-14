@@ -2,6 +2,7 @@
   <div class="font-mono h-screen">
     <l-map :center="center" :zoom="zoom" class="h-full">
       <l-tile-layer />
+      <l-marker :latlng="center" />
     </l-map>
   </div>
 </template>

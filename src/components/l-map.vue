@@ -31,8 +31,11 @@ export default {
     this.map = map(this.$el, options);
   },
   methods: {
-    addLayer(layer) {
-      this.$nextTick(() => this.map.addLayer(layer));
+    tileLayer(tl) {
+      this.$nextTick(() => tl.addTo(this.map));
+    },
+    marker(m) {
+      this.$nextTick(() => m.addTo(this.map));
     }
   }
 };
