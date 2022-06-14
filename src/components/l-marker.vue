@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    <slot />
+  </div>
 </template>
 
 <script>
-import { marker, icon } from 'leaflet';
+import { icon, marker } from 'leaflet';
 
 export default {
   props: {
@@ -11,6 +13,11 @@ export default {
       type: Array,
       default: () => [0, 0]
     }
+  },
+  data() {
+    return {
+      marker: null
+    };
   },
   mounted() {
     const options = {
@@ -22,7 +29,13 @@ export default {
         shadowSize: [41, 41]
       })
     };
-    this.$parent.marker(marker(this.latlng, options));
+    this.marker = marker(this.latlng, options);
+    this.$parent.marker(this.marker);
+  },
+  methods: {
+    bindPopup(p) {
+      this.$nextTick(() => this.marker && this.marker.bindPopup(p));
+    }
   }
 };
 </script>

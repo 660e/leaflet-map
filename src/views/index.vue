@@ -2,7 +2,9 @@
   <div class="font-mono h-screen">
     <l-map :center="center" :zoom="zoom" class="h-full">
       <l-tile-layer />
-      <l-marker :latlng="center" />
+      <l-marker :latlng="center">
+        <l-popup>popup</l-popup>
+      </l-marker>
     </l-map>
   </div>
 </template>
