@@ -1,6 +1,8 @@
 <template>
   <div class="font-mono h-screen">
-    <l-map :center="center" :zoom="zoom" class="h-full" />
+    <l-map :center="center" :zoom="zoom" class="h-full">
+      <l-tile-layer />
+    </l-map>
   </div>
 </template>
 

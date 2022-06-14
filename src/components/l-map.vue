@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { map, tileLayer } from 'leaflet';
+import { map } from 'leaflet';
 
 export default {
   props: {
@@ -28,7 +28,12 @@ export default {
       center: this.center,
       zoom: this.zoom
     };
-    this.map = map(this.$el, options).addLayer(tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
+    this.map = map(this.$el, options);
+  },
+  methods: {
+    addLayer(layer) {
+      this.$nextTick(() => this.map.addLayer(layer));
+    }
   }
 };
 </script>
