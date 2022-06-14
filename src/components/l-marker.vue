@@ -4,8 +4,6 @@
 
 <script>
 import { marker, icon } from 'leaflet';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 export default {
   props: {
@@ -17,10 +15,10 @@ export default {
   mounted() {
     const options = {
       icon: icon({
-        iconUrl: markerIcon,
+        iconUrl: require('leaflet/dist/images/marker-icon.png'),
         iconSize: [25, 41],
         iconAnchor: [12.5, 41],
-        shadowUrl: markerShadow,
+        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         shadowSize: [41, 41]
       })
     };
